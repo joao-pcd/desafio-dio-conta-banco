@@ -21,10 +21,9 @@ public class ContaTerminal {
 
         String agencia = agenciaNumero.concat("-".concat(agenciadigito));
 
-        NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
-        //Locale localBrasil = new Locale("pt", "BR");
+        Locale localBrasil = new Locale("pt", "BR");
+        NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(localBrasil);
         System.out.println("Insira o saldo:");
-        //String saldo = NumberFormat.getCurrencyInstance(localBrasil).format(scanner.nextDouble());
         String saldo = formatoMoeda.format(scanner.nextDouble());
 
         System.out.println("Olá ".concat(nomeCompleto) +
