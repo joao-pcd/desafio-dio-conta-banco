@@ -3,7 +3,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class ContaTerminal {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
@@ -21,9 +21,11 @@ public class ContaTerminal {
 
         String agencia = agenciaNumero.concat("-".concat(agenciadigito));
 
-        Locale localBrasil = new Locale("pt", "BR");
+        NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+        //Locale localBrasil = new Locale("pt", "BR");
         System.out.println("Insira o saldo:");
-        String saldo = NumberFormat.getCurrencyInstance(localBrasil).format(scanner.nextDouble());;
+        //String saldo = NumberFormat.getCurrencyInstance(localBrasil).format(scanner.nextDouble());
+        String saldo = formatoMoeda.format(scanner.nextDouble());
 
         System.out.println("Olá ".concat(nomeCompleto) +
                 ", obrigado por criar uma conta em nosso banco, sua agência é ".concat(agencia) +
